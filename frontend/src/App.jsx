@@ -5,13 +5,15 @@ import Login from "./pages/login/Login";
 import SignUp from "./pages/signup/SignUp";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext";
+import Welcome from "./pages/home/Welcome";
 
 function App() {
 	const { authUser } = useAuthContext();
 	return (
 		<div className='p-4 h-screen flex items-center justify-center'>
 			<Routes>
-				<Route path='/' element= {<Home />} />
+				<Route path='/' element={authUser ? <Home /> : <Navigate to={"/wel"} />} />
+				<Route path='/wel' element={authUser ? <Navigate to='/' /> : <Welcome />} />
 				<Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
 				<Route path='/signup' element={authUser ? <Navigate to='/' /> : <SignUp />} />
 			</Routes>
