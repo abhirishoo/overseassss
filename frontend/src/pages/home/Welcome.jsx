@@ -4,7 +4,7 @@ import img2 from "../../../public/fonts/logowhite.png";
 
 const Welcome = () => {
   return (
-    <div className="text-white h-screen w-full bg-[#0F0F0F] flex flex-col  ">
+    <div className="text-white  h-screen w-full bg-[#0F0F0F] flex flex-col  ">
         <div className="flex justify-center -mb-10 lg:mt-[5%] mt-[20%] cursor-pointer w-full select-none " >
           <img className="absolute  " src={img1} alt="" />
           <img className="relative hover:opacity-0 " src={img2} alt="img" />
